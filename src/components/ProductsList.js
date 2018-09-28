@@ -24,8 +24,6 @@ class ProductsList extends Component {
     },
   }
 
-  loadingMessage = 'Wait a second, the products are downloaded...'
-
   componentDidMount() {
     const { loadAllProducts, products } = this.props;
 
@@ -46,7 +44,10 @@ class ProductsList extends Component {
 
     if (products.loading) {
       return (
-        <Loader styleClass="products__loader" message={this.loadingMessage} />
+        <Loader
+          styleClass="products__loader"
+          message="Wait a second, the products are downloaded..."
+        />
       );
     }
 

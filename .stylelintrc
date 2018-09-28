@@ -1,5 +1,12 @@
 {
   "extends": "stylelint-config-standard",
+  "ignoreFiles": "src/css/normalize.css",
   "rules": {
+    "declaration-empty-line-before": [
+      "always", {
+        "except": ["first-nested"],
+        "ignore": ["after-declaration"]
+      }
+    ]
   }
 }
