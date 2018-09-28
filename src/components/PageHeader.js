@@ -2,19 +2,19 @@ import React from 'react';
 
 export default function PageHeader() {
   return (
-    <header>
-      <p>
+    <header className="page-header container">
+      <p className="page-header__title">
         Test task for the company
-        <a
-          href="https://light-it.net"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a className="page-header__light-it" href="https://light-it.net" target="_blank" rel="noopener noreferrer">
           Light IT
         </a>
       </p>
-      <button type="button">Sing in</button>
-      <button type="button">Registration</button>
+      <button className="page_header__sing-in button" type="button">
+        Sing in
+      </button>
+      <button className="page_header__register button" type="button">
+        Registration
+      </button>
     </header>
   );
 }

@@ -7,8 +7,12 @@ export default function App() {
   return (
     <div role="presentation">
       <PageHeader />
-      <h1>Products of our company</h1>
-      <ProductsList />
+      <main className="container">
+        <section className="products">
+          <h1 className="products__heading">Products of our company</h1>
+          <ProductsList />
+        </section>
+      </main>
       <PageFooter />
     </div>
   );

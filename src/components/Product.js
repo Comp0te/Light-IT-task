@@ -6,15 +6,12 @@ export default function Product(props) {
   const imgTotalSrc = `http://smktesting.herokuapp.com/static/${imgSrc}`;
 
   return (
-    <li>
-      <div>
-        <img
-          src={imgTotalSrc}
-          alt="product"
-        />
+    <li className="products__item">
+      <div className="products__img-wraper">
+        <img className="products__img" src={imgTotalSrc} alt="product" />
       </div>
-      <button type="button">
-        <b>{title}</b>
+      <button className="products__button button" type="button">
+        <b className="products__title">{title}</b>
       </button>
     </li>
   );

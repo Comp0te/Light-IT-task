@@ -46,16 +46,12 @@ class ProductsList extends Component {
 
     if (products.loading) {
       return (
-        <ul>
-          <li>
-            <Loader message={this.loadingMessage} />
-          </li>
-        </ul>
+        <Loader styleClass="products__loader" message={this.loadingMessage} />
       );
     }
 
     return (
-      <ul>
+      <ul className="products__list">
         {productElements}
       </ul>
     );
