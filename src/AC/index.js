@@ -2,7 +2,7 @@ import {
   LOAD_ALL_PRODUCTS, SUCCESS, FAIL, START,
 } from '../constants';
 
-export default function loadProducts(url) {
+export function loadProducts(url) {
   return (dispatch) => {
     dispatch({
       type: LOAD_ALL_PRODUCTS + START,
@@ -10,7 +10,6 @@ export default function loadProducts(url) {
 
     fetch(url, {
       method: 'GET',
-      mode: 'same-origin',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
       },
@@ -35,4 +34,8 @@ export default function loadProducts(url) {
         });
       });
   };
+}
+
+export function abc() {
+
 }
