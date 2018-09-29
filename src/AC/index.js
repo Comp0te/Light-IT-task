@@ -1,11 +1,11 @@
 import {
-  LOAD_ALL_PRODUCTS, SUCCESS, FAIL, START,
+  LOAD_ALL_PRODUCTS, SUCCESS, FAIL, START, ACTIVE_PRODUCT, LOAD_COMMENTS,
 } from '../constants';
 
-export function loadProducts(url) {
+function GetFromServer(actionType, url) {
   return (dispatch) => {
     dispatch({
-      type: LOAD_ALL_PRODUCTS + START,
+      type: actionType + START,
     });
 
     fetch(url, {
@@ -23,19 +23,30 @@ export function loadProducts(url) {
       })
       .then((response) => {
         dispatch({
-          type: LOAD_ALL_PRODUCTS + SUCCESS,
+          type: actionType + SUCCESS,
           payload: response,
         });
       })
       .catch((error) => {
         dispatch({
-          type: LOAD_ALL_PRODUCTS + FAIL,
+          type: actionType + FAIL,
           payload: error.message,
         });
       });
   };
 }
 
-export function abc() {
+export function loadProducts(url) {
+  return GetFromServer(LOAD_ALL_PRODUCTS, url);
+}
 
+export function loadComments(url) {
+  return GetFromServer(LOAD_COMMENTS, url);
+}
+
+export function activeProduct(id) {
+  return {
+    type: ACTIVE_PRODUCT,
+    payload: id,
+  };
 }
