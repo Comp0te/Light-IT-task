@@ -5,6 +5,9 @@ export const SUCCESS = 'SUCCESS';
 export const FAIL = 'FAIL';
 export const ACTIVE_PRODUCT = 'ACTIVE_PRODUCT';
 export const LOAD_COMMENTS = 'LOAD_COMMENTS';
+export const TOGGLE = 'TOGGLE';
+export const RESET = 'RESET';
+export const COMMENT = 'COMMENT';
 
 export const URL = {
   LOAD_ALL_PRODUCTS: 'http://smktesting.herokuapp.com/api/products',

@@ -1,5 +1,5 @@
 import {
-  LOAD_ALL_PRODUCTS, SUCCESS, FAIL, START, ACTIVE_PRODUCT, LOAD_COMMENTS,
+  LOAD_ALL_PRODUCTS, SUCCESS, FAIL, START, ACTIVE_PRODUCT, LOAD_COMMENTS, TOGGLE, COMMENT, RESET,
 } from '../constants';
 
 function GetFromServer(actionType, url) {
@@ -48,5 +48,17 @@ export function activeProduct(id) {
   return {
     type: ACTIVE_PRODUCT,
     payload: id,
+  };
+}
+
+export function toggleCommentsVisibility() {
+  return {
+    type: TOGGLE + COMMENT,
+  };
+}
+
+export function resetCommentsData() {
+  return {
+    type: RESET + COMMENT,
   };
 }

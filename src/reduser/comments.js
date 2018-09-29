@@ -1,8 +1,9 @@
 import {
-  LOAD_COMMENTS, START, SUCCESS, FAIL,
+  LOAD_COMMENTS, START, SUCCESS, FAIL, COMMENT, TOGGLE, RESET,
 } from '../constants';
 
 const defaultCommentsState = {
+  isVisible: false,
   data: [],
   isLoading: false,
   isLoaded: false,
@@ -33,6 +34,19 @@ export default (commentsState = defaultCommentsState, action) => {
       return {
         ...commentsState,
         errorLoadMessage: payload,
+      };
+    }
+
+    case TOGGLE + COMMENT: {
+      return {
+        ...commentsState,
+        isVisible: !commentsState.isVisible,
+      };
+    }
+
+    case RESET + COMMENT: {
+      return {
+        ...defaultCommentsState,
       };
     }
 
