@@ -2,14 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { URL } from '../constants';
-import { activeProduct } from '../AC';
+import { activeProduct, resetCommentsData } from '../AC';
 import CommentList from './CommentList';
 
 function Product(props) {
-  const { data, backToList, activeProductId } = props;
+  const {
+    data, backToList, activeProductId, deleteCommentsData,
+  } = props;
   const imgUrl = URL.IMAGE_SRC + data.img;
 
-  const handleBackButtonClick = () => backToList();
+  const handleBackButtonClick = () => {
+    backToList();
+    deleteCommentsData();
+  };
 
   const getProductBody = () => (
     <div className="product-details__wraper">
@@ -50,6 +55,7 @@ Product.propTypes = {
     text: PropTypes.string,
   }),
   backToList: PropTypes.func.isRequired,
+  deleteCommentsData: PropTypes.func.isRequired,
 };
 
 Product.defaultProps = {
@@ -65,6 +71,9 @@ const mapDispatchToProps = dispatch => (
   {
     backToList: () => {
       dispatch(activeProduct(null));
+    },
+    deleteCommentsData: () => {
+      dispatch(resetCommentsData());
     },
   }
 );
