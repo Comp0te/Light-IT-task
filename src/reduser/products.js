@@ -1,12 +1,13 @@
 import {
-  LOAD_ALL_PRODUCTS, START, SUCCESS, FAIL,
+  LOAD_ALL_PRODUCTS, START, SUCCESS, FAIL, ACTIVE_PRODUCT,
 } from '../constants';
 
 const defaultProductsState = {
   data: [],
-  loading: false,
-  loaded: false,
+  isLoading: false,
+  isLoaded: false,
   errorLoadMessage: '',
+  activeProduct: null,
 };
 
 export default (productsState = defaultProductsState, action) => {
@@ -16,7 +17,7 @@ export default (productsState = defaultProductsState, action) => {
     case LOAD_ALL_PRODUCTS + START: {
       return {
         ...productsState,
-        loading: true,
+        isLoading: true,
       };
     }
 
@@ -24,8 +25,8 @@ export default (productsState = defaultProductsState, action) => {
       return {
         ...productsState,
         data: payload,
-        loading: false,
-        loaded: true,
+        isLoading: false,
+        isLoaded: true,
       };
     }
 
@@ -33,6 +34,13 @@ export default (productsState = defaultProductsState, action) => {
       return {
         ...productsState,
         errorLoadMessage: payload,
+      };
+    }
+
+    case ACTIVE_PRODUCT: {
+      return {
+        ...productsState,
+        activeProduct: payload,
       };
     }
 
