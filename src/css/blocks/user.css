@@ -1,0 +1,18 @@
+.user {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user__button {
+  width: 150px;
+
+  color: #fff;
+
+  border-color: #fff;
+}
+
+.user__button:hover {
+  color: var(--main-color);
+
+  background-color: #fff;
+}

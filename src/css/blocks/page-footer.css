@@ -1,0 +1,61 @@
+.page-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 110px;
+  padding-top: 20px;
+
+  color: #fff;
+
+  background-image:
+    linear-gradient(
+      to top,
+      var(--main-color),
+      var(--main-color-opacity)
+    );
+}
+
+.page-footer__author {
+  display: block;
+  margin-bottom: 10px;
+
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.page-footer__contacts-list {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+
+  list-style-type: none;
+}
+
+.page-footer__contacts-item {
+  margin-right: 20px;
+}
+
+.page-footer__contacts-item:last-child {
+  margin-right: 0;
+}
+
+.page-footer__link {
+  display: block;
+
+  color: #fff;
+
+  transition:
+    color 0.2s ease-in,
+    transform 0.2s ease-out;
+}
+
+.page-footer__link:hover {
+  transform: scale(1.1, 1.1);
+
+  color: #8fbfe5ed;
+  text-decoration: none;
+}

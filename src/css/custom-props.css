@@ -1,0 +1,5 @@
+:root {
+  --main-color: rgb(40, 54, 69);
+  --main-color-opacity: rgba(40, 54, 69, 0.6);
+  --bg-color: rgba(40, 54, 69, 0.45);
+}

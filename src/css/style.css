@@ -1,3 +1,14 @@
+/* common */
 @import "normalize.css";
 @import "global.css";
 @import "common.css";
+@import "custom-props.css";
+
+/* blocks */
+@import "blocks/container.css";
+@import "blocks/button.css";
+@import "blocks/page-body.css";
+@import "blocks/page-header.css";
+@import "blocks/user.css";
+@import "blocks/page-footer.css";
+@import "blocks/products.css";

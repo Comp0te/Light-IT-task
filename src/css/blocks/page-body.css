@@ -1,0 +1,27 @@
+.page-body {
+  position: relative;
+
+  height: calc(100% - 205px);
+  margin-top: 95px;
+  margin-bottom: 110px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30px;
+  color: var(--main-color);
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      var(--main-color),
+      transparent 15%,
+      transparent 85%,
+      var(--main-color) 100%
+    ),
+    radial-gradient(
+      ellipse at center,
+      #f5f5f5,
+      var(--bg-color) 60%
+    );
+}
