@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loadProducts } from '../AC';
-import Product from './Product';
+import ProductItem from './ProductItem';
 import Loader from './Loader';
+import { URL } from '../constants';
 
 class ProductsList extends Component {
   static propTypes = {
     loadAllProducts: PropTypes.func.isRequired,
     products: PropTypes.shape({
       data: PropTypes.array,
-      loading: PropTypes.bool,
-      loaded: PropTypes.bool,
+      isLoading: PropTypes.bool,
+      isLoaded: PropTypes.bool,
       errorLoadMessage: PropTypes.string,
     }),
   }
@@ -19,30 +20,31 @@ class ProductsList extends Component {
   static defaultProps = {
     products: {
       productData: [],
-      loading: false,
-      loaded: false,
+      isLoading: false,
+      isLoaded: false,
     },
   }
 
   componentDidMount() {
     const { loadAllProducts, products } = this.props;
 
-    if (!products.loaded && !products.loading) {
-      loadAllProducts('http://smktesting.herokuapp.com/api/products');
+    if (!products.isLoaded && !products.isLoading) {
+      loadAllProducts(URL.LOAD_ALL_PRODUCTS);
     }
   }
 
   render() {
     const { products } = this.props;
     const productElements = products.data.map(product => (
-      <Product
+      <ProductItem
         key={product.id}
+        id={`${product.id}`}
         title={product.title}
         imgSrc={product.img}
       />
     ));
 
-    if (products.loading) {
+    if (products.isLoading) {
       return (
         <Loader
           styleClass="products__loader"
