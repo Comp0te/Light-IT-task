@@ -47,7 +47,6 @@ class ProductsList extends Component {
     if (products.isLoading) {
       return (
         <Loader
-          styleClass="products__loader"
           message="Wait a second, the products are downloaded..."
         />
       );

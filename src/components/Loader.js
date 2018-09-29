@@ -2,15 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function Loader(props) {
-  const { message, styleClass } = props;
-  const style = `${styleClass} loader`;
+  const { message } = props;
 
   return (
-    <p className={style}>{message}</p>
+    <p className="loader">{message}</p>
   );
 }
 
 Loader.propTypes = {
   message: PropTypes.string.isRequired,
-  styleClass: PropTypes.string.isRequired,
 };
