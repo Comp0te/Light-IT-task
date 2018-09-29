@@ -13,6 +13,7 @@
   border-width: 3px;
   border-radius: 27.5px;
   cursor: pointer;
+  outline: none;
 
   transition:
     color 0.2s ease-in,

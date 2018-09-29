@@ -2,6 +2,7 @@
   position: relative;
 
   height: calc(100% - 205px);
+  min-height: calc(100vh - 205px);
   margin-top: 95px;
   margin-bottom: 110px;
 

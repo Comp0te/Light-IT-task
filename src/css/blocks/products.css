@@ -71,3 +71,10 @@
   background-color: var(--main-color);
 }
 
+.products__loader {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  text-align: center;
+}
+
