@@ -5,6 +5,7 @@
   min-height: calc(100vh - 205px);
   margin-top: 95px;
   margin-bottom: 110px;
+  overflow-x: scroll;
 
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
@@ -16,8 +17,8 @@
     linear-gradient(
       to bottom,
       var(--main-color),
-      transparent 15%,
-      transparent 85%,
+      transparent 6%,
+      transparent 94%,
       var(--main-color) 100%
     ),
     radial-gradient(

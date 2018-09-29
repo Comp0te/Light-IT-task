@@ -13,3 +13,5 @@
 @import "blocks/page-footer.css";
 @import "blocks/products.css";
 @import "blocks/product-details.css";
+@import "blocks/comments.css";
+@import "blocks/loader.css";
