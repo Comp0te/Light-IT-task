@@ -1,0 +1,59 @@
+.sing-in-modal {
+  display: none;
+}
+
+.sing-in-modal--on {
+  display: block;
+}
+
+.sing-in-modal__form {
+  position: fixed;
+  top: 15vh;
+  left: calc(50vw - 220px);
+  z-index: 11;
+
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  width: 540px;
+  padding: 60px 90px;
+
+  background-color: #fff;
+  border: 2px solid var(--main-color);
+  border-radius: 50%/50%;
+}
+
+.sing-in-modal__heading {
+  margin: 0;
+  width: 100%;
+  margin-bottom: 10px;
+
+  color: var(--main-color);
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.sing-in-modal__field {
+  width: 100%;
+}
+
+.sing-in-modal__buttons-wraper {
+  width: 100%;
+}
+
+.sing-in-modal__button {
+  width: 100%;
+  margin-bottom: 10px;
+
+  color: var(--main-color);
+
+  border-color: var(--main-color);
+}
+
+.sing-in-modal__button:hover,
+.sing-in-modal__button:focus {
+  color: #fff;
+
+  background-color: var(--minor-color);
+}

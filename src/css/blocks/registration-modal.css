@@ -1,0 +1,68 @@
+.registration-modal {
+  display: none;
+}
+
+.registration-modal--on {
+  display: block;
+}
+
+.registration-modal__form {
+  position: fixed;
+  top: 15vh;
+  left: calc(50vw - 440px);
+  z-index: 11;
+
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  width: 880px;
+  padding: 100px 140px;
+
+  background-color: #fff;
+  border: 2px solid var(--main-color);
+  border-radius: 50%/50%;
+}
+
+.registration-modal__heading {
+  margin: 0;
+  width: 100%;
+  margin-bottom: 20px;
+
+  color: var(--main-color);
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.registration-modal__field {
+  width: 45%;
+}
+
+.registration-modal__field--password {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.registration-modal__buttons-wraper {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.registration-modal__button {
+  width: 45%;
+
+  color: var(--main-color);
+
+  border-color: var(--main-color);
+}
+
+.registration-modal__button:hover,
+.registration-modal__button:focus {
+  color: #fff;
+
+  background-color: var(--minor-color);
+}

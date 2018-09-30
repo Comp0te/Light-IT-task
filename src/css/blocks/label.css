@@ -1,0 +1,15 @@
+.label {
+  display: block;
+  width: 45%;
+  padding-left: 23px;
+  padding-bottom: 8px;
+
+  font-size: 18px;
+  color: var(--main-color);
+}
+
+.label--password {
+  width: 100%;
+
+  text-align: center;
+}

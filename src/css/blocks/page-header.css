@@ -40,7 +40,8 @@
     transform 0.2s ease-out;
 }
 
-.page-header__light-it:hover {
+.page-header__light-it:hover,
+.page-header__light-it:focus {
   transform: scale(1.1, 1.1);
 
   color: #8fbfe5ed;

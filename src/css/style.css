@@ -5,6 +5,8 @@
 @import "custom-props.css";
 
 /* blocks */
+@import "blocks/text-input.css";
+@import "blocks/label.css";
 @import "blocks/container.css";
 @import "blocks/button.css";
 @import "blocks/page-body.css";
@@ -15,3 +17,6 @@
 @import "blocks/product-details.css";
 @import "blocks/comments.css";
 @import "blocks/loader.css";
+@import "blocks/modal.css";
+@import "blocks/registration-modal.css";
+@import "blocks/sing-in-modal.css";

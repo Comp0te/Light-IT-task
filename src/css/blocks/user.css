@@ -11,7 +11,8 @@
   border-color: #fff;
 }
 
-.user__button:hover {
+.user__button:hover,
+.user__button:focus {
   color: var(--main-color);
 
   background-color: #fff;

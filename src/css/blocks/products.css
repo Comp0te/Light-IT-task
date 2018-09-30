@@ -65,7 +65,8 @@
   border-color: var(--main-color);
 }
 
-.products__button:hover {
+.products__button:hover,
+.products__button:focus {
   color: #fff;
 
   background-color: var(--main-color);
