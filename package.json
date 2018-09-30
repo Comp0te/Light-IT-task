@@ -1,8 +1,9 @@
 {
   "name": "light-it-task",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "license": "MIT",
+  "homepage": "https://comp0te.github.io/Light-it-task/",
   "dependencies": {
     "prop-types": "15.6.2",
     "react": "^16.5.2",
