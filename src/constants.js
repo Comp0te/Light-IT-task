@@ -16,9 +16,9 @@ export const SAVE_USER = 'SAVE_USER';
 export const SING_OUT = 'SING_OUT';
 
 export const URL = {
-  LOAD_ALL_PRODUCTS: 'http://smktesting.herokuapp.com/api/products',
-  IMAGE_SRC: 'http://smktesting.herokuapp.com/static/',
-  LOAD_COMMENTS: 'http://smktesting.herokuapp.com/api/reviews/',
-  REGISTER_USER: 'http://smktesting.herokuapp.com/api/register/',
-  AUTHORIZE_USER: 'http://smktesting.herokuapp.com/api/login/',
+  LOAD_ALL_PRODUCTS: 'https://smktesting.herokuapp.com/api/products',
+  IMAGE_SRC: 'https://smktesting.herokuapp.com/static/',
+  LOAD_COMMENTS: 'https://smktesting.herokuapp.com/api/reviews/',
+  REGISTER_USER: 'https://smktesting.herokuapp.com/api/register/',
+  AUTHORIZE_USER: 'https://smktesting.herokuapp.com/api/login/',
 };
