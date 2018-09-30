@@ -1,5 +1,6 @@
 import {
-  LOAD_ALL_PRODUCTS, SUCCESS, FAIL, START, ACTIVE_PRODUCT, LOAD_COMMENTS, TOGGLE, COMMENT, RESET,
+  LOAD_ALL_PRODUCTS, SUCCESS, FAIL, START, ACTIVE_PRODUCT, LOAD_COMMENTS,
+  TOGGLE, COMMENT, RESET, REGISTRATION_FORM, SING_IN_FORM,
 } from '../constants';
 
 function GetFromServer(actionType, url) {
@@ -60,5 +61,17 @@ export function toggleCommentsVisibility() {
 export function resetCommentsData() {
   return {
     type: RESET + COMMENT,
+  };
+}
+
+export function toggleSingInFormVisibility() {
+  return {
+    type: TOGGLE + SING_IN_FORM,
+  };
+}
+
+export function toggleRegistrationFormVisibility() {
+  return {
+    type: TOGGLE + REGISTRATION_FORM,
   };
 }

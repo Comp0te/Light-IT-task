@@ -8,6 +8,8 @@ export const LOAD_COMMENTS = 'LOAD_COMMENTS';
 export const TOGGLE = 'TOGGLE';
 export const RESET = 'RESET';
 export const COMMENT = 'COMMENT';
+export const REGISTRATION_FORM = 'REGISTRATION_FORM';
+export const SING_IN_FORM = 'SING_IN_FORM';
 
 export const URL = {
   LOAD_ALL_PRODUCTS: 'http://smktesting.herokuapp.com/api/products',
