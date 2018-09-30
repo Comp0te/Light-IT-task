@@ -10,9 +10,15 @@ export const RESET = 'RESET';
 export const COMMENT = 'COMMENT';
 export const REGISTRATION_FORM = 'REGISTRATION_FORM';
 export const SING_IN_FORM = 'SING_IN_FORM';
+export const POST_FORM_REGISTRATION = 'POST_FORM_REGISTRATION';
+export const POST_FORM_SING_IN = 'POST_FORM_SING_IN';
+export const SAVE_USER = 'SAVE_USER';
+export const SING_OUT = 'SING_OUT';
 
 export const URL = {
   LOAD_ALL_PRODUCTS: 'http://smktesting.herokuapp.com/api/products',
   IMAGE_SRC: 'http://smktesting.herokuapp.com/static/',
   LOAD_COMMENTS: 'http://smktesting.herokuapp.com/api/reviews/',
+  REGISTER_USER: 'http://smktesting.herokuapp.com/api/register/',
+  AUTHORIZE_USER: 'http://smktesting.herokuapp.com/api/login/',
 };
