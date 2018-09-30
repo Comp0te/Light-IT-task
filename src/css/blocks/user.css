@@ -1,10 +1,11 @@
 .user {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .user__button {
   width: 150px;
+  margin-left: 20px;
 
   color: #fff;
 
@@ -16,4 +17,13 @@
   color: var(--main-color);
 
   background-color: #fff;
+}
+
+.user__name {
+  display: block;
+  padding: 10px 0;
+
+  font-size: 30px;
+  line-height: 35px;
+  font-weight: 700;
 }

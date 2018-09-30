@@ -19,3 +19,7 @@
     color 0.2s ease-in,
     background-color 0.2s ease-out;
 }
+
+.button:disabled {
+  opacity: 0.3;
+}
