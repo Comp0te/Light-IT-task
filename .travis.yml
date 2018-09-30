@@ -5,7 +5,6 @@ cache:
   directories:
   - node_modules
 script:
-  - yarn run eslint
   - yarn test
   - yarn build
 deploy:
