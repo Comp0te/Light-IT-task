@@ -8,9 +8,11 @@ import { URL } from '../constants';
 
 class CommentList extends Component {
   static propTypes = {
+    productId: PropTypes.string,
+    // from connect
+    userName: PropTypes.string.isRequired,
     loadCommentsForProduct: PropTypes.func.isRequired,
     toggleVisibilityComments: PropTypes.func.isRequired,
-    productId: PropTypes.string,
     comments: PropTypes.shape({
       data: PropTypes.array,
       isLoading: PropTypes.bool,
@@ -43,6 +45,29 @@ class CommentList extends Component {
     toggleVisibilityComments();
   }
 
+  getButtonAddComment = () => {
+    const { userName, comments } = this.props;
+
+    if (comments.isVisible) {
+      if (userName === '') {
+        return (
+          <p className="comments__auth">In order to leave the comment, please register or sign in to your account.</p>
+        );
+      }
+
+      return (
+        <button
+          className="comments__button button"
+          type="button"
+        >
+        Add new comment
+        </button>
+      );
+    }
+
+    return null;
+  };
+
   render() {
     const { comments } = this.props;
     const commentsElements = comments.data.map(comment => (
@@ -72,7 +97,7 @@ class CommentList extends Component {
         >
           {comments.isVisible ? 'Hide comments' : 'Show comments' }
         </button>
-        <p className="comments__auth">In order to leave the comment, please register or sign in to your account</p>
+        {this.getButtonAddComment()}
         <ul
           className={
             comments.isVisible
@@ -88,6 +113,7 @@ class CommentList extends Component {
 
 const mapStateToProps = state => ({
   comments: state.comments,
+  userName: state.user.userName,
 });
 
 const mapDispatchToProps = dispatch => (
