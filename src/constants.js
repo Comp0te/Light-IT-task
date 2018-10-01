@@ -18,7 +18,7 @@ export const SAVE_USER = 'SAVE_USER';
 export const SING_OUT = 'SING_OUT';
 
 export const URL = {
-  LOAD_ALL_PRODUCTS: 'https://smktesting.herokuapp.com/api/products',
+  LOAD_ALL_PRODUCTS: 'https://smktesting.herokuapp.com/api/products/',
   IMAGE_SRC: 'https://smktesting.herokuapp.com/static/',
   LOAD_COMMENTS: 'https://smktesting.herokuapp.com/api/reviews/',
   REGISTER_USER: 'https://smktesting.herokuapp.com/api/register/',
