@@ -51,3 +51,27 @@
 .page-header__user {
   width: 500px;
 }
+
+@media (max-width: 600px) {
+  .page-header {
+    height: 105px;
+    padding-top: 10px;
+  }
+
+  .page-header__wraper {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .page-header__title {
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .page-header__user {
+    width: 100%;
+  }
+}

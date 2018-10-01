@@ -29,7 +29,8 @@
 
 .comments__list {
   display: block;
-  width: 660px;
+  max-width: 660px;
+  width: 100%;
   padding: 0;
   margin: 0 auto;
 
@@ -61,6 +62,18 @@
 
 .comments__text {
   margin: 0;
+  overflow-wrap: break-word;
 
   font-weight: 400;
+}
+
+@media (max-width: 460px) {
+  .comments__wraper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .comments__text {
+    text-align: center;
+  }
 }

@@ -27,3 +27,11 @@
       var(--bg-color) 60%
     );
 }
+
+@media (max-width: 600px) {
+  .page-body {
+    height: calc(100% - 215px);
+    min-height: calc(100vh - 215px);
+    margin-top: 105px;
+  }
+}

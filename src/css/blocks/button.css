@@ -23,3 +23,10 @@
 .button:disabled {
   opacity: 0.3;
 }
+
+@media (max-width: 600px) {
+  .button {
+    padding-top: 6.5px;
+    padding-bottom: 6.5px;
+  }
+}

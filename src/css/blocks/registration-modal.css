@@ -8,9 +8,9 @@
 
 .registration-modal__form {
   position: fixed;
-  top: 11vh;
+  top: 8vh;
   left: calc(50vw - 440px);
-  z-index: 11;
+  z-index: 100;
 
   display: flex;
   justify-content: space-between;
@@ -36,6 +36,7 @@
 
 .registration-modal__field {
   width: 45%;
+  margin-bottom: 10px;
 }
 
 .registration-modal__field--password {
@@ -76,4 +77,30 @@
   font-size: 16px;
   font-weight: 400;
   text-align: center;
+}
+
+@media (max-width: 900px) {
+  .registration-modal__form {
+    top: 20px;
+    left: calc(50vw - 165px);
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 330px;
+    padding: 10px;
+
+    border-radius: 20px;
+  }
+
+  .registration-modal__buttons-wraper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .registration-modal__field {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }

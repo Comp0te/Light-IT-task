@@ -9,8 +9,8 @@
 .sing-in-modal__form {
   position: fixed;
   top: 15vh;
-  left: calc(50vw - 220px);
-  z-index: 11;
+  left: calc(50vw - 270px);
+  z-index: 20;
 
   display: flex;
   justify-content: space-between;
@@ -36,10 +36,12 @@
 
 .sing-in-modal__field {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .sing-in-modal__buttons-wraper {
   width: 100%;
+  margin-top: 30px;
 }
 
 .sing-in-modal__button {
@@ -56,4 +58,16 @@
   color: #fff;
 
   background-color: var(--minor-color);
+}
+
+@media (max-width: 600px) {
+  .sing-in-modal__form {
+    top: 20px;
+    left: calc(50vw - 165px);
+
+    width: 330px;
+    padding: 20px;
+
+    border-radius: 20px;
+  }
 }

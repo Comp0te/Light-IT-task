@@ -1,0 +1,13 @@
+.error {
+  display: block;
+  width: 100%;
+
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--error-color);
+}
+
+.error--big {
+  font-size: 30px;
+}

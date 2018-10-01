@@ -8,9 +8,9 @@
 
 .comment-add-modal__form {
   position: fixed;
-  top: 15vh;
+  top: 10vh;
   left: calc(50vw - 320px);
-  z-index: 11;
+  z-index: 20;
 
   display: flex;
   justify-content: space-between;
@@ -36,7 +36,7 @@
 
 .comment-add-modal__field {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .comment-add-modal__buttons-wraper {
@@ -58,4 +58,21 @@
   color: #fff;
 
   background-color: var(--minor-color);
+}
+
+@media (max-width: 680px) {
+  .comment-add-modal__form {
+    top: 20px;
+    left: calc(50vw - 165px);
+
+    width: 330px;
+    padding: 20px;
+
+    border-radius: 20px;
+  }
+
+  .comment-add-modal__buttons-wraper {
+    width: 100%;
+    margin: 0;
+  }
 }
