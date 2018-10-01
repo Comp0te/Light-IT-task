@@ -12,6 +12,7 @@ const defaultCommentsState = {
   commentAddForm: {
     isVisible: false,
     isLoading: false,
+    errorMessage: '',
   },
 };
 
@@ -78,6 +79,8 @@ export default (commentsState = defaultCommentsState, action) => {
     case POST_FORM_COMMENT_ADD + SUCCESS: {
       return {
         ...commentsState,
+        isLoaded: false,
+        isVisible: false,
         commentAddForm: {
           ...commentsState.commentAddForm,
           isLoading: false,
@@ -89,6 +92,11 @@ export default (commentsState = defaultCommentsState, action) => {
     case POST_FORM_COMMENT_ADD + FAIL: {
       return {
         ...commentsState,
+        commentAddForm: {
+          ...commentsState.commentAddForm,
+          isLoading: false,
+          errorMessage: payload,
+        },
       };
     }
 

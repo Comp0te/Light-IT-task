@@ -9,10 +9,12 @@ const defaultUserState = {
   singInForm: {
     isVisible: false,
     isLoading: false,
+    errorMessage: '',
   },
   registrationForm: {
     isVisible: false,
     isLoading: false,
+    errorMessage: '',
   },
 };
 
@@ -64,6 +66,11 @@ export default (userState = defaultUserState, action) => {
     case POST_FORM_REGISTRATION + FAIL: {
       return {
         ...userState,
+        registrationForm: {
+          ...userState.registrationForm,
+          isLoading: false,
+          errorMessage: payload,
+        },
       };
     }
 
@@ -91,6 +98,11 @@ export default (userState = defaultUserState, action) => {
     case POST_FORM_SING_IN + FAIL: {
       return {
         ...userState,
+        singInForm: {
+          ...userState.singInForm,
+          isLoading: false,
+          errorMessage: payload,
+        },
       };
     }
 
