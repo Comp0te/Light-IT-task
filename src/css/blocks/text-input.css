@@ -34,7 +34,7 @@
     0 0 5px 0 var(--minor-color);
 }
 
-.text-input--password {
+.text-input--small {
   width: 45%;
   margin: 0 auto;
   margin-bottom: 10px;

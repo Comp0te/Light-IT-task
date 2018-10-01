@@ -8,8 +8,9 @@
   color: var(--main-color);
 }
 
-.label--password {
+.label--centered {
   width: 100%;
+  padding-left: 0;
 
   text-align: center;
 }

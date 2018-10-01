@@ -6,6 +6,7 @@
 
 /* blocks */
 @import "blocks/text-input.css";
+@import "blocks/textarea.css";
 @import "blocks/label.css";
 @import "blocks/container.css";
 @import "blocks/button.css";
@@ -20,3 +21,4 @@
 @import "blocks/modal.css";
 @import "blocks/registration-modal.css";
 @import "blocks/sing-in-modal.css";
+@import "blocks/comment-add-modal.css";
