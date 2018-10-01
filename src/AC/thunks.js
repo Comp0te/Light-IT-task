@@ -69,16 +69,17 @@ export function postToServer(actionType, url, values) {
               token: response.token,
             },
           });
+        } else {
+          throw new Error(response.message);
         }
 
         return response;
       })
       .then((response) => {
-        if (response.success) {
-          dispatch({
-            type: actionType + SUCCESS,
-          });
-        }
+        dispatch({
+          type: actionType + SUCCESS,
+        });
+
         return response;
       })
       .catch((error) => {
@@ -119,7 +120,10 @@ export function postComment(actionType, url, values, token) {
           dispatch({
             type: actionType + SUCCESS,
           });
+        } else {
+          throw new Error(response.message);
         }
+
         return response;
       })
       .catch((error) => {
