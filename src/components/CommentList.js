@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Loader from './Loader';
 import Comment from './Comment';
-import { loadComments, toggleCommentsVisibility } from '../AC';
+import CommentAddForm from './CommentAddForm';
+import {
+  loadComments, toggleCommentsVisibility, toggleAddCommentFormVisibility, postCommentAddForm,
+} from '../AC';
 import { URL } from '../constants';
 
 class CommentList extends Component {
@@ -11,14 +14,18 @@ class CommentList extends Component {
     productId: PropTypes.string,
     // from connect
     userName: PropTypes.string.isRequired,
+    token: PropTypes.string.isRequired,
     loadCommentsForProduct: PropTypes.func.isRequired,
     toggleVisibilityComments: PropTypes.func.isRequired,
+    toggleVisibilityCommentAddForm: PropTypes.func.isRequired,
+    postFormCommentAdd: PropTypes.func.isRequired,
     comments: PropTypes.shape({
       data: PropTypes.array,
       isLoading: PropTypes.bool,
       isLoaded: PropTypes.bool,
       errorLoadMessage: PropTypes.string,
       isVisible: PropTypes.bool,
+      commentAddForm: PropTypes.objectOf(PropTypes.bool).isRequired,
     }),
   }
 
@@ -45,6 +52,18 @@ class CommentList extends Component {
     toggleVisibilityComments();
   }
 
+  handleClickShowAddCommentForm = () => {
+    const { toggleVisibilityCommentAddForm } = this.props;
+
+    toggleVisibilityCommentAddForm();
+  }
+
+  handleSubmitCommentAddForm = (values) => {
+    const { postFormCommentAdd, productId, token } = this.props;
+
+    postFormCommentAdd(URL.LOAD_COMMENTS + productId, values, token);
+  };
+
   getButtonAddComment = () => {
     const { userName, comments } = this.props;
 
@@ -59,6 +78,7 @@ class CommentList extends Component {
         <button
           className="comments__button button"
           type="button"
+          onClick={this.handleClickShowAddCommentForm}
         >
         Add new comment
         </button>
@@ -98,6 +118,12 @@ class CommentList extends Component {
           {comments.isVisible ? 'Hide comments' : 'Show comments' }
         </button>
         {this.getButtonAddComment()}
+        <CommentAddForm
+          isVisible={comments.commentAddForm.isVisible}
+          isLoading={comments.commentAddForm.isLoading}
+          closeUp={this.handleClickShowAddCommentForm}
+          onSubmit={this.handleSubmitCommentAddForm}
+        />
         <ul
           className={
             comments.isVisible
@@ -114,6 +140,7 @@ class CommentList extends Component {
 const mapStateToProps = state => ({
   comments: state.comments,
   userName: state.user.userName,
+  token: state.user.token,
 });
 
 const mapDispatchToProps = dispatch => (
@@ -123,6 +150,12 @@ const mapDispatchToProps = dispatch => (
     },
     toggleVisibilityComments: () => {
       dispatch(toggleCommentsVisibility());
+    },
+    toggleVisibilityCommentAddForm: () => {
+      dispatch(toggleAddCommentFormVisibility());
+    },
+    postFormCommentAdd: (url, values, token) => {
+      dispatch(postCommentAddForm(url, values, token));
     },
   }
 );
