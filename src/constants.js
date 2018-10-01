@@ -10,8 +10,10 @@ export const RESET = 'RESET';
 export const COMMENT = 'COMMENT';
 export const REGISTRATION_FORM = 'REGISTRATION_FORM';
 export const SING_IN_FORM = 'SING_IN_FORM';
+export const ADD_COMMENT_FORM = 'ADD_COMMENT_FORM';
 export const POST_FORM_REGISTRATION = 'POST_FORM_REGISTRATION';
 export const POST_FORM_SING_IN = 'POST_FORM_SING_IN';
+export const POST_FORM_COMMENT_ADD = 'POST_FORM_COMMENT_ADD';
 export const SAVE_USER = 'SAVE_USER';
 export const SING_OUT = 'SING_OUT';
 

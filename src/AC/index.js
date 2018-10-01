@@ -1,9 +1,9 @@
 import {
   LOAD_ALL_PRODUCTS, ACTIVE_PRODUCT, LOAD_COMMENTS,
   TOGGLE, COMMENT, RESET, REGISTRATION_FORM, SING_IN_FORM,
-  POST_FORM_REGISTRATION, POST_FORM_SING_IN, SING_OUT,
+  POST_FORM_REGISTRATION, POST_FORM_SING_IN, SING_OUT, ADD_COMMENT_FORM, POST_FORM_COMMENT_ADD,
 } from '../constants';
-import { getFromServer, postToServer } from './thunks';
+import { getFromServer, postToServer, postComment } from './thunks';
 
 export function loadProducts(url) {
   return getFromServer(LOAD_ALL_PRODUCTS, url);
@@ -44,6 +44,12 @@ export function toggleRegistrationFormVisibility() {
   };
 }
 
+export function toggleAddCommentFormVisibility() {
+  return {
+    type: TOGGLE + ADD_COMMENT_FORM,
+  };
+}
+
 export const postRegistrationForm = (
   url,
   values,
@@ -59,3 +65,9 @@ export function singOut() {
     type: SING_OUT,
   };
 }
+
+export const postCommentAddForm = (
+  url,
+  values,
+  token,
+) => postComment(POST_FORM_COMMENT_ADD, url, values, token);

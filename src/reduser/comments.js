@@ -1,5 +1,6 @@
 import {
   LOAD_COMMENTS, START, SUCCESS, FAIL, COMMENT, TOGGLE, RESET,
+  ADD_COMMENT_FORM, POST_FORM_COMMENT_ADD,
 } from '../constants';
 
 const defaultCommentsState = {
@@ -8,6 +9,10 @@ const defaultCommentsState = {
   isLoading: false,
   isLoaded: false,
   errorLoadMessage: '',
+  commentAddForm: {
+    isVisible: false,
+    isLoading: false,
+  },
 };
 
 export default (commentsState = defaultCommentsState, action) => {
@@ -47,6 +52,43 @@ export default (commentsState = defaultCommentsState, action) => {
     case RESET + COMMENT: {
       return {
         ...defaultCommentsState,
+      };
+    }
+
+    case TOGGLE + ADD_COMMENT_FORM: {
+      return {
+        ...commentsState,
+        commentAddForm: {
+          ...commentsState.commentAddForm,
+          isVisible: !commentsState.commentAddForm.isVisible,
+        },
+      };
+    }
+
+    case POST_FORM_COMMENT_ADD + START: {
+      return {
+        ...commentsState,
+        commentAddForm: {
+          ...commentsState.commentAddForm,
+          isLoading: true,
+        },
+      };
+    }
+
+    case POST_FORM_COMMENT_ADD + SUCCESS: {
+      return {
+        ...commentsState,
+        commentAddForm: {
+          ...commentsState.commentAddForm,
+          isLoading: false,
+          isVisible: false,
+        },
+      };
+    }
+
+    case POST_FORM_COMMENT_ADD + FAIL: {
+      return {
+        ...commentsState,
       };
     }
 
