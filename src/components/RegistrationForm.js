@@ -34,8 +34,8 @@ function RegistrationForm(props) {
           <Field className="text-input" name="email" component="input" type="email" id="reg-user-email" placeholder="example@examp.com" />
         </div>
         <div className="registration-modal__field registration-modal__field--password">
-          <label className="label label--password" htmlFor="reg-user-password">User password: * </label>
-          <Field className="text-input text-input--password" name="password" component="input" type="password" id="reg-user-password" placeholder="Ented the password" required />
+          <label className="label label--centered" htmlFor="reg-user-password">User password: * </label>
+          <Field className="text-input text-input--small" name="password" component="input" type="password" id="reg-user-password" placeholder="Ented the password" required />
         </div>
         <p className="registration-modal__required">Fields marked with an asterisk * are required!</p>
         <div className="registration-modal__buttons-wraper">
