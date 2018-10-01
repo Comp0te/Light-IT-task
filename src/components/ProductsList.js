@@ -34,7 +34,7 @@ class ProductsList extends Component {
   }
 
   render() {
-    const { products } = this.props;
+    const { products, products: { errorLoadMessage } } = this.props;
     const productElements = products.data.map(product => (
       <ProductItem
         key={product.id}
@@ -43,6 +43,12 @@ class ProductsList extends Component {
         imgSrc={product.img}
       />
     ));
+
+    if (errorLoadMessage) {
+      return (
+        <p className="error error--big">{`Error: ${errorLoadMessage}`}</p>
+      );
+    }
 
     if (products.isLoading) {
       return (
