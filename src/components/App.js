@@ -5,6 +5,7 @@ import PageHeader from './PageHeader';
 import PageFooter from './PageFooter';
 import ProductsList from './ProductsList';
 import Product from './Product';
+import Modals from './Modals';
 
 function App(props) {
   const { activeProduct, productsData } = props;
@@ -35,6 +36,7 @@ function App(props) {
         {getBody(activeProduct)}
       </main>
       <PageFooter />
+      <Modals />
     </div>
   );
 }

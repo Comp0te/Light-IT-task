@@ -1,29 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import SingInForm from './SingInForm';
-import RegistrationForm from './RegistrationForm';
 import {
-  toggleSingInFormVisibility, toggleRegistrationFormVisibility,
-  postRegistrationForm, postSingInForm, singOut,
+  toggleSingInFormVisibility, toggleRegistrationFormVisibility, singOut,
 } from '../AC';
-import { URL } from '../constants';
-
 
 function User(props) {
   const {
-    toggleSingInForm, toggleRegistrationForm, singInFormState,
-    registrationFormState, postFormRegistration, postFormSingIn, userName, resetUser,
+    toggleSingInForm, toggleRegistrationForm, userName, resetUser,
   } = props;
   const handleSingInButtonClick = () => toggleSingInForm();
   const handleSingOutButtonClick = () => resetUser();
   const handleRegistrationButtonClick = () => toggleRegistrationForm();
-  const handleSubmitRegistrationForm = (values) => {
-    postFormRegistration(URL.REGISTER_USER, values);
-  };
-  const handleSubmitSingInForm = (values) => {
-    postFormSingIn(URL.AUTHORIZE_USER, values);
-  };
 
   const getBody = () => {
     if (userName === '') {
@@ -64,18 +52,6 @@ function User(props) {
   return (
     <div className="page-header__user">
       {getBody()}
-      <SingInForm
-        isVisible={singInFormState.isVisible}
-        isLoading={singInFormState.isLoading}
-        closeUp={handleSingInButtonClick}
-        onSubmit={handleSubmitSingInForm}
-      />
-      <RegistrationForm
-        isVisible={registrationFormState.isVisible}
-        isLoading={registrationFormState.isLoading}
-        closeUp={handleRegistrationButtonClick}
-        onSubmit={handleSubmitRegistrationForm}
-      />
     </div>
   );
 }
@@ -85,16 +61,10 @@ User.propTypes = {
   userName: PropTypes.string.isRequired,
   toggleRegistrationForm: PropTypes.func.isRequired,
   toggleSingInForm: PropTypes.func.isRequired,
-  postFormRegistration: PropTypes.func.isRequired,
-  postFormSingIn: PropTypes.func.isRequired,
   resetUser: PropTypes.func.isRequired,
-  singInFormState: PropTypes.objectOf(PropTypes.bool).isRequired,
-  registrationFormState: PropTypes.objectOf(PropTypes.bool).isRequired,
 };
 
 const mapStateToProps = state => ({
-  singInFormState: state.user.singInForm,
-  registrationFormState: state.user.registrationForm,
   userName: state.user.userName,
 });
 
@@ -105,12 +75,6 @@ const mapDispatchToProps = dispatch => (
     },
     toggleSingInForm: () => {
       dispatch(toggleSingInFormVisibility());
-    },
-    postFormRegistration: (url, values) => {
-      dispatch(postRegistrationForm(url, values));
-    },
-    postFormSingIn: (url, values) => {
-      dispatch(postSingInForm(url, values));
     },
     resetUser: () => {
       dispatch(singOut());
