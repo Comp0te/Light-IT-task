@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
+import FormField from './FormField';
 
 function CommentAddForm(props) {
   const {
-    isVisible, closeUp, handleSubmit, isLoading,
+    isVisible, closeUp, handleSubmit, isLoading, errorMessage,
   } = props;
 
   return (
@@ -17,14 +18,35 @@ function CommentAddForm(props) {
         <h2 className="comment-add-modal__heading">
           Your comment:
         </h2>
-        <div className="comment-add-modal__field">
-          <label className="label" htmlFor="form-comment">Comment: </label>
-          <Field className="textarea" name="text" component="textarea" id="form-comment" placeholder="Write anything here..." />
-        </div>
-        <div className="comment-add-modal__field">
-          <label className="label label--centered" htmlFor="form-rate">Product rating: </label>
-          <Field className="text-input text-input--small" name="rate" component="input" type="number" id="form-rate" placeholder="rating from 1 to 5" />
-        </div>
+        <Field
+          name="text"
+          component={FormField}
+          type={null}
+          className={{
+            input: 'textarea',
+            label: 'label',
+            wraper: 'comment-add-modal__field',
+            error: 'error',
+          }}
+          id="form-comment"
+          placeholder="Write anything here..."
+          labelText="Comment: "
+        />
+        <Field
+          name="rate"
+          component={FormField}
+          type="number"
+          className={{
+            input: 'text-input text-input--small',
+            label: 'label label--centered',
+            wraper: 'comment-add-modal__field',
+            error: 'error error--centered',
+          }}
+          id="form-rate"
+          placeholder="rating from 1 to 5"
+          labelText="Product rating: "
+        />
+        {errorMessage && (<span className="error">{`Error: ${errorMessage}`}</span>)}
         <div className="comment-add-modal__buttons-wraper">
           <button
             className="comment-add-modal__button button"
@@ -50,10 +72,27 @@ CommentAddForm.propTypes = {
   isVisible: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired,
   closeUp: PropTypes.func.isRequired,
+  errorMessage: PropTypes.string.isRequired,
   // from redux-form
   handleSubmit: PropTypes.func.isRequired,
 };
 
+const validate = (values) => {
+  const error = {};
+
+  if (!values.text) {
+    error.text = 'Required';
+  }
+
+  if (!values.rate) {
+    error.rate = 'Required';
+  } else if (values.rate < 1 || values.rate > 5) {
+    error.rate = 'The rating should be in the range from 1 to 5.';
+  }
+  return error;
+};
+
 export default reduxForm({
   form: 'commentAdd',
+  validate,
 })(CommentAddForm);
