@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default function FormField(props) {
   const {
@@ -39,5 +39,14 @@ export default function FormField(props) {
 }
 
 FormField.propTypes = {
+  id: PropTypes.string.isRequired,
+  className: PropTypes.objectOf(PropTypes.string).isRequired,
+  labelText: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  type: PropTypes.string,
+};
 
+FormField.defaultProps = {
+  placeholder: '',
+  type: null,
 };
