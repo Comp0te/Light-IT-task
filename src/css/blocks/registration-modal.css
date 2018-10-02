@@ -7,8 +7,8 @@
 }
 
 .registration-modal__form {
-  position: fixed;
-  top: 8vh;
+  position: absolute;
+  top: 10%;
   left: calc(50vw - 440px);
   z-index: 100;
 
@@ -81,7 +81,6 @@
 
 @media (max-width: 900px) {
   .registration-modal__form {
-    top: 20px;
     left: calc(50vw - 165px);
 
     flex-direction: column;

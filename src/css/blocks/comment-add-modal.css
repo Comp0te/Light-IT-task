@@ -7,8 +7,8 @@
 }
 
 .comment-add-modal__form {
-  position: fixed;
-  top: 10vh;
+  position: absolute;
+  top: 10%;
   left: calc(50vw - 320px);
   z-index: 20;
 
@@ -62,7 +62,6 @@
 
 @media (max-width: 680px) {
   .comment-add-modal__form {
-    top: 20px;
     left: calc(50vw - 165px);
 
     width: 330px;
